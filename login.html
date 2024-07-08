@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login or Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .form-container {
+            display: flex;
+            justify-content: center;
+        }
+        .form-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 300px;
+            margin: 20px;
+        }
+        form {
+            width: 100%;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .guest-login {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .guest-login a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .guest-login a:hover {
+            text-decoration: underline;
+        }
+        .register-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .register-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+        .google-login-btn,
+        .github-login-btn,
+        .discord-login-btn{
+            display: inline-block;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 100%;
+            margin-bottom: 10px; /* Butonlar arasında boşluk */
+        }
+        .google-login-btn {
+            background-color: #4285F4;
+        }
+        .google-login-btn:hover {
+            background-color: #357ae8;
+        }
+        .github-login-btn {
+            background-color: #333;
+        }
+        .github-login-btn:hover {
+            background-color: #2b2b2b;
+        }
+        .discord-login-btn {
+            background-color: hwb(316 3% 25%);
+        }
+        .discord-login-btn:hover {
+            background-color: #07ff7f;
+        }
+    </style>
+</head>
+<body>
+    <h2>Login or Register</h2>
+    <div class="form-container">
+        <div class="form-box">
+            <h3>Login</h3>
+            <form action="/" method="post">
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" name="email" required><br><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required><br><br>
+                <input type="submit" value="Login">
+            </form>
+            <div class="guest-login">
+                <p>Or login as a <a href="/guestLogin">guest</a>.</p>
+            </div>
+            <div class="register-link">
+                <p>Don't have an account? <a href="/register">Register here</a>.</p>
+            </div>
+        
+            <form action="/auth/google" method="get">
+                <button class="google-login-btn" type="submit">Google ile Giriş Yap</button>
+            </form>
+            
+            <form action="/auth/github" method="get">
+                <button class="github-login-btn" type="submit">GitHub ile Giriş Yap</button>
+            </form>
+            <form action="/auth/discord" method="get">
+                <button class="discord-login-btn" type="submit">Discord ile Giriş Yap</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
